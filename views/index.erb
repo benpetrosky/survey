@@ -1,0 +1,15 @@
+<h1>Welcome to the Survey Center</h1>
+
+
+<h3>Click on a survey to add questions to it.</h3>
+<ul>
+  <%@surveys.each()do |survey| %>
+  <li><%=survey.topic()%><a href="/surveys/<%=survey.id()%>/edit"> change this survey</a></li>
+  <%end%>
+</ul>
+
+<form action="/topics" method="post">
+  <label for="topic">Type in the topic you would like your survey to be about.</label>
+  <input name="topic" type="text">
+  <button type="submit"> Add this topic</button>
+</form>

@@ -1,0 +1,17 @@
+<h1><%=@survey.topic()%></h1>
+
+
+<ul>
+  <%@questions.each()do |question| %>
+  <li><%=question.question()%><a href="/questions/<%=@survey.id()%>/edit"> change this question</a></li>
+  <%end%>
+</ul>
+<!-- another page -->
+
+<form action="/questions" method="post">
+  <input type="hidden" name="_method" value="">
+  <label for="question">Type in your question to add to survey</label>
+  <input name="question" type="text">
+  <button type="submit"> Add question </button>
+
+</form>

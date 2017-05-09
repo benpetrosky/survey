@@ -1,0 +1,15 @@
+<h1><%= @survey.topic() %></h1>
+
+<form action="/surveys/<%= @survey.id %>" method="post">
+
+  <label for="question">add question to survey:</label>
+  <input name="question" type="text">
+
+  <button type="submit">change</button>
+</form>
+
+
+
+<% @survey.questions().each() do |question| %>
+    <li><%= question.question %> <a href="/questions/<%= question.id() %>/edit">Update this specific question</a></li>
+  <% end %>
